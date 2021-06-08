@@ -1,0 +1,265 @@
+:root {
+  --primary-color: #c44536;
+
+  font-size: calc((100vh + 100vw)/100);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  pointer-events: auto;
+  color: inherit;
+}
+
+input, label {
+  pointer-events: auto;
+}
+
+i {
+  margin: 0.5rem;
+}
+
+#particles-js {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.box {
+  display: grid;
+}
+
+.b3 {
+  justify-items: end;
+}
+
+.b5 {
+  justify-items: center;
+  align-items: center;
+}
+
+.b7 {
+  align-items: end;
+}
+
+.b9 {
+  justify-items: end;
+  align-items: end;
+}
+
+.academy, .governance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 9rem;
+  border-radius: 1.5rem;
+  margin: 1rem;
+  box-shadow: inset 0.3rem 0.3rem 1rem rgba(196, 69, 54, 0.7),
+              inset -0.3rem -0.3rem 1rem rgba(196, 69, 54, 0.7);
+}
+
+a.academy:hover,
+a.governance:hover,
+a.btnConnectApp:hover {
+  box-shadow: 0.3rem 0.3rem 0.5rem rgba(255, 255, 255, 0.4),
+              0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.4),
+              inset 0.3rem 0.3rem 1rem rgba(196, 69, 54, 0.7),
+              inset -0.3rem -0.3rem 1rem rgba(196, 69, 54, 0.7);
+}
+
+.item-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.switch-1 input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -2;
+}
+
+.switch-1 .toggle-label {
+  width: 4rem;
+  height: auto;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  transition: all 350ms ease-in;
+  pointer-events: auto;
+  box-shadow: 0.4rem 0.4rem 1rem rgba(255, 255, 255, 0.4),
+              0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.4),
+              inset 0.4rem 0.4rem 1rem rgba(255, 255, 255, 0.4),
+              inset 0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+.switch-1 .toggle-label .fa-cog {
+  animation: reverse1;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  transition: all 350ms ease-in;
+  font-size: 1.5rem;
+  margin: 0.2rem;
+  position: relative;
+}
+
+.switch-1 .toggle-checkbox:checked + .toggle-label .fa-cog {
+  animation: 300ms switch1, 2s rotate infinite linear;
+  animation-fill-mode: forwards;
+}
+
+.switch-2 input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -2;
+}
+
+.switch-2 .toggle-label {
+  margin-left: 1rem;
+  width: 4rem;
+  height: auto;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  transition: all 350ms ease-in;
+  pointer-events: auto;
+  box-shadow: 0.4rem 0.4rem 1rem rgba(255, 255, 255, 0.4),
+              0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.4),
+              inset 0.4rem 0.4rem 1rem rgba(255, 255, 255, 0.4),
+              inset 0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+.switch-2 .toggle-label::before {
+    animation-name: reverse2;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+    transition: all 350ms ease-in;
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 0.2rem solid #e0d450;
+    background: #fffaa8;
+    margin: 0.2rem;
+    position: relative;
+  }
+
+.switch-2 .toggle-checkbox:checked + .toggle-label::before {
+  background: #d7d7d7;
+  border-color: #333;
+  animation-name: switch2;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes switch1 {
+  0% {
+    left: 0rem;
+  }
+  100% {
+    left: 2rem;
+  }
+}
+@keyframes reverse1 {
+  0% {
+    left: 2rem;
+  }
+  100% {
+    left: 0rem;
+  }
+}
+
+@keyframes switch2 {
+  0% {
+    left: 0rem;
+  }
+  60% {
+    left: 0rem;
+    width: 3rem;
+  }
+  100% {
+    left: 2rem;
+    width: 1.5rem;
+  }
+}
+@keyframes reverse2 {
+  0% {
+    left: 2rem;
+    width: 1.5rem;
+  }
+  60% {
+    left: 0rem;
+    width: 3rem;
+  }
+  100% {
+    left: 0rem;
+  }
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+.item-3 .btnConnectApp {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 9rem;
+  border-radius: 1.5rem;
+  box-shadow: inset 0.3rem 0.3rem 1rem rgba(196, 69, 54, 0.7),
+              inset -0.3rem -0.3rem 1rem rgba(196, 69, 54, 0.7);
+}
+
+.item-3 .logo {
+  width: 1rem;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.socials {
+  margin: 1rem;
+}
+
+a.twitter:hover {
+  color: #1da1f2;  
+}
+
+a.discord:hover {
+  color: #7289da;  
+}
+
+a.telegram:hover {
+  color: #0088cc;  
+}
